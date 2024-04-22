@@ -39,12 +39,12 @@ class SinglyLinkedList:
         elif self.head.next is None:
             self.head = None
         else:
-            prev = None
-            current = self.head
-            while current.next is not None:
-                prev = current
-                current = current.next
-            prev.next = None
+            prev=None
+            n = self.head
+            while n.next is not None:
+                prev = n
+                n = n.next
+            prev.n = None
     
     def search(self, x):
         if self.head is None:
@@ -73,30 +73,30 @@ class SinglyLinkedList:
             print("\n")
             
 
-if __name__ == "__main__":
-    sll = SinglyLinkedList()
-    while True:
-        print("*******************************************************\nSelect the operation to perform on the linked list.")
-        print("\n1. Add at Beginning\n2. Add at End\n3. Delete at Beginning\n4. Delete at End\n5. Search Node\n6. Display\n7. Exit")
-        choice = int(input("Enter your choice: "))
-        if choice == 1:
-            data = input("\nEnter an element to add at the beginning: ")
-            sll.add_at_beginning(data)
-            print("\n", data, "is added to the linked list.")
-        elif choice == 2:
-            data = input("\nEnter an element to add at the end: ")
-            sll.add_at_end(data)
-            print("\n", data, "is added to the linked list.")
-        elif choice == 3:
-            sll.remove_at_beginning()
-        elif choice == 4:
-            sll.remove_at_end()
-        elif choice == 5: 
-            x = input("\nEnter element to search in the linked list: ")
-            sll.search(x)
-        elif choice == 6:
-            sll.display()
-        elif choice == 7:
-            break
-        else:
-            print("\nEnter a valid operation to perform.")
+
+sll = SinglyLinkedList()
+while True:
+    print("*******************************************************\nSelect the operation to perform on the linked list.")
+    print("\n1. Add at Beginning\n2. Add at End\n3. Delete at Beginning\n4. Delete at End\n5. Search Node\n6. Display\n7. Exit")
+    choice = int(input("Enter your choice: "))
+    if choice == 1:
+        data = input("\nEnter an element to add at the beginning: ")
+        sll.add_at_beginning(data)
+        print("\n", data, "is added to the linked list.")
+    elif choice == 2:
+        data = input("\nEnter an element to add at the end: ")
+        sll.add_at_end(data)
+        print("\n", data, "is added to the linked list.")
+    elif choice == 3:
+        sll.remove_at_beginning()
+    elif choice == 4:
+        sll.remove_at_end()
+    elif choice == 5: 
+        x = input("\nEnter element to search in the linked list: ")
+        sll.search(x)
+    elif choice == 6:
+        sll.display()
+    elif choice == 7:
+        break
+    else:
+        print("\nEnter a valid operation to perform.")
